@@ -29,35 +29,40 @@ if (opcion === 1) {
     let productoBuscado = prompt("eliga un producto:\n banana\n manzana\n naranja\n peras\n frutillas\n tomates");
     let resultados = buscarPorProducto(productoBuscado)
     if (resultados.length > 0) {
-        console.log("Resultados de la búsqueda:")
+        alert("Resultados de la búsqueda:")
             for (let i = 0; i < resultados.length; i++) {
             let fruta = resultados[i]
             let mensaje=""
-            mensaje += `Producto: ${fruta.producto}\n`
-            mensaje += `Precio: ${fruta.precio}\n`
-            mensaje += `Origen: ${fruta.origen}\n`
+            mensaje += `Producto: ${fruta.producto}\n` + `Precio: ${fruta.precio}\n` + `Origen: ${fruta.origen}\n`
             alert(mensaje)
     }
     } else {
-    console.log("No se encontraron resultados para el producto buscado.")
+    alert("No se encontraron resultados para el producto buscado.")
     }
 } else if (opcion === 2) {
     let resultados = buscarPorPrecio();
-    console.log("Productos ordenados por precio de menor a mayor:")
+    let mensaje1 = ""
+    alert("Productos ordenados por precio de menor a mayor:")
     for (let i = 0; i < resultados.length; i++) {
-        let fruta = resultados[i];
-        console.log(fruta)
-    }
+        let fruta = resultados[i];        
+        mensaje1 += `Producto: ${fruta.producto}\n` + `Origen: ${fruta.origen}\n`
+        mensaje1 += `Precio: ${fruta.precio}\n`
+        mensaje1 += "----------------\n"
+        
+    } alert(mensaje1)
 } else if (opcion === 3) {
     let origenBuscado = prompt("Ingrese el origen a buscar:\n nacional\n importado")
     let resultados = buscarPorOrigen(origenBuscado)
+    let mensaje2 = ""
     if (resultados.length > 0) {
-        console.log("Resultados de la búsqueda:")
+        alert("Resultados de la búsqueda:")
         for (let i = 0; i < resultados.length; i++) {
         let fruta = resultados[i]
-        console.log(fruta)
-    }
+        mensaje2 += `Producto: ${fruta.producto}\n` + `Origen: ${fruta.origen}\n`
+        mensaje2 += `Precio: ${fruta.precio}\n`
+        mensaje2 += "----------------\n"
+    } alert(mensaje2)
     } else {
-        console.log("No se encontraron resultados para el origen buscado.")
+        alert("No se encontraron resultados para el origen buscado.")
     }
 }
